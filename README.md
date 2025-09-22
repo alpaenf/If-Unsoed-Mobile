@@ -32,3 +32,14 @@ Tujuan pembuatan aplikasi ini adalah:
 
 ---
 
+# Tugas 2 Pertemuan 3: Penambahan Halaman Profil Lulusan
+
+## Deskripsi
+Pada tugas kedua ini, aplikasi dikembangkan dengan menambahkan **halaman baru** yang berisi:
+- Profil lulusan
+- Informasi kontak
+- Tautan media sosial
+
+Halaman ini dapat diakses dengan menekan tombol **"next"** dari halaman utama.
+
+
