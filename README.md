@@ -42,4 +42,4 @@ Pada tugas kedua ini, aplikasi dikembangkan dengan menambahkan **halaman baru** 
 
 Halaman ini dapat diakses dengan menekan tombol **"next"** dari halaman utama.
 
-
+<img src= "https://github.com/alpaenf/If-Unsoed-Mobile/blob/main/app/src/main/res/drawable/Gambar%20WhatsApp%202025-09-22%20pukul%2022.37.31_76adcdc7.jpg" width="250">
