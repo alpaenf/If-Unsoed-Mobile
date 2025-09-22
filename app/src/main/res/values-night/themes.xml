@@ -4,4 +4,14 @@
         <!-- Customize your dark theme here. -->
         <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
     </style>
+
+    <!-- Tambahkan style Theme.IFUnsoedMobile jika belum ada dan diperlukan -->
+    <style name="Theme.IFUnsoedMobile" parent="Base.Theme.IFUnsoedMobile" />
+
+    <!-- Splash Screen Theme -->
+    <style name="Theme.App.Starting" parent="Theme.SplashScreen">
+        <item name="windowSplashScreenBackground">@android:color/black</item>
+        <item name="windowSplashScreenAnimatedIcon">@mipmap/ic_launcher</item>
+        <item name="postSplashScreenTheme">@style/Theme.IFUnsoedMobile</item>
+    </style>
 </resources>

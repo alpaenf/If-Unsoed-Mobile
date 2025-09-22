@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace = "com.example.ifunsoedmobile"
+    namespace = "com.unsoed.informatikamobile"
     compileSdk = 36
 
     defaultConfig {
-        applicationId = "com.example.ifunsoedmobile"
+        applicationId = "com.unsoed.informatikamobile"
         minSdk = 24
         targetSdk = 36
         versionCode = 1
@@ -33,12 +33,10 @@ android {
     kotlinOptions {
         jvmTarget = "11"
     }
-
     viewBinding {
-        enable=true
+        enable = true
     }
 }
-
 dependencies {
 
     implementation(libs.androidx.core.ktx)
@@ -46,8 +44,9 @@ dependencies {
     implementation(libs.material)
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
+    implementation(libs.constraintlayout)
+    implementation("androidx.core:core-splashscreen:1.0.1") // Ditambahkan untuk Splash Screen
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
-
 }

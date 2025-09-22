@@ -1,20 +1,27 @@
-package com.example.ifunsoedmobile
+package com.unsoed.informatikamobile // Disesuaikan dengan namespace
 
+import android.content.Intent
 import android.os.Bundle
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
+import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
+import com.unsoed.informatikamobile.databinding.ActivityMainBinding // Disesuaikan dengan namespace
 
 class MainActivity : AppCompatActivity() {
+    private lateinit var binding: ActivityMainBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
-        setContentView(R.layout.activity_main)
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
+        installSplashScreen()
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
+        initNavigation()
+    }
+
+    private fun initNavigation() {
+        binding.btnToPage2.setOnClickListener {
+            // Pastikan Halaman2Activity ada di package yang benar atau import jika berbeda
+            startActivity(Intent(this, Halaman2Activity::class.java))
         }
     }
 }
