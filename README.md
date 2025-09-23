@@ -45,5 +45,5 @@ Halaman ini dapat diakses dengan menekan tombol **"next"** dari halaman utama.
 <img src= "https://github.com/alpaenf/If-Unsoed-Mobile/blob/main/app/src/main/res/drawable/Gambar%20WhatsApp%202025-09-22%20pukul%2022.37.31_76adcdc7.jpg" width="250">
 
 ## Link Demo
-<img src= "https://github.com/alpaenf/If-Unsoed-Mobile/blob/main/app/src/main/res/drawable/Demo_Praktikum.mp4" width="250">
+<img src= "https://github.com/alpaenf/If-Unsoed-Mobile/blob/main/app/src/main/res/drawable/Demo_Praktikum%20(1).gif" width="250">
 
