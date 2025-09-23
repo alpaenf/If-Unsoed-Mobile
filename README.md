@@ -22,17 +22,13 @@ Tujuan pembuatan aplikasi ini adalah:
 ## 🖼️ Dokumentasi Tampilan  
 
 ### 🔹 Logo Aplikasi  
-<img src="https://github.com/alpaenf/H1D023032_MUKHAMMAD-ALFAEN-FADILLAH_TUGAS-1-PERTEMUAN-2-PRAKTIKUM-PEMROGRAMAN-MOBILE/blob/main/H1D023032_MUKHAMMAD-ALFAEN-FADILLAH_TUGAS-1-PERTEMUAN-2-PRAKTIKUM-PEMROGRAMAN-MOBILE-main/app/src/main/res/drawable/App%20Logo.png" width="250">
-
+<img src="https://github.com/alpaenf/If-Unsoed-Mobile/blob/main/app/src/main/res/drawable/Gambar1.jpg" width="250">
 
 ### 🔹 Halaman Utama  
-<img src="https://github.com/alpaenf/H1D023032_MUKHAMMAD-ALFAEN-FADILLAH_TUGAS-1-PERTEMUAN-2-PRAKTIKUM-PEMROGRAMAN-MOBILE/blob/main/H1D023032_MUKHAMMAD-ALFAEN-FADILLAH_TUGAS-1-PERTEMUAN-2-PRAKTIKUM-PEMROGRAMAN-MOBILE-main/app/src/main/res/drawable/Halaman%20Utama%20App.png" width="250">  
-
-### 🔹 Tampilan Halaman Utama setelah penyesuaian warna btn dan tulisan 
 <img src= "https://github.com/alpaenf/If-Unsoed-Mobile/blob/main/app/src/main/res/drawable/Gambar2.jpg" width="250">
 
 ### 🔹 Tampilan Backend APK  
-<img src="https://github.com/alpaenf/H1D023032_MUKHAMMAD-ALFAEN-FADILLAH_TUGAS-1-PERTEMUAN-2-PRAKTIKUM-PEMROGRAMAN-MOBILE/blob/main/H1D023032_MUKHAMMAD-ALFAEN-FADILLAH_TUGAS-1-PERTEMUAN-2-PRAKTIKUM-PEMROGRAMAN-MOBILE-main/app/src/main/res/drawable/Backapk%20App.png" width="250">  
+<img src="https://github.com/alpaenf/If-Unsoed-Mobile/blob/main/app/src/main/res/drawable/Gambar3.jpg" width="250">  
 
 ---
 
