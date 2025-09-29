@@ -61,21 +61,6 @@ Aplikasi akan mengambil data buku dari **OpenLibrary API** dengan query khusus: 
 
 ---
 
-## 🎯 Fitur Utama  
-- ✅ Menggunakan pola **MVVM (Model – View – ViewModel)** untuk memisahkan logika bisnis dan UI.  
-- ✅ Mengonsumsi data dari **OpenLibrary API** menggunakan **Retrofit**.  
-- ✅ Menampilkan daftar buku secara **dinamis** di `DaftarBukuActivity`.  
-- ✅ Data ditampilkan dengan **RecyclerView** agar lebih efisien dan user-friendly.  
-
----
-
-## ⚡ Alur Aplikasi  
-1. Saat aplikasi dijalankan, `ViewModel` akan memanggil API OpenLibrary.  
-2. Data hasil respons API diolah pada `Repository`.  
-3. `RecyclerView` akan menampilkan daftar buku secara **real-time** sesuai data yang diterima.  
-
----
-
 ## 📸 Demo Singkat  
 Aplikasi otomatis melakukan **fetch data** dari API dan menampilkan daftar buku "Kotlin Programming" saat pertama kali dibuka.  
 
