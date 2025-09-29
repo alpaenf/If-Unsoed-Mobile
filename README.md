@@ -65,7 +65,7 @@ Aplikasi akan mengambil data buku dari **OpenLibrary API** dengan query khusus: 
 Aplikasi otomatis melakukan **fetch data** dari API dan menampilkan daftar buku "Kotlin Programming" saat pertama kali dibuka.  
 
 <p align="center">
-  <img src="https://github.com/alpaenf/If-Unsoed-Mobile/blob/main/app/src/main/res/raw/demo_pertemuan4.gif" width="250"/>
+  <img src="https://github.com/alpaenf/If-Unsoed-Mobile/blob/main/app/src/main/res/raw/demopertemuan4.gif" width="250"/>
 </p>  
 
 ---
