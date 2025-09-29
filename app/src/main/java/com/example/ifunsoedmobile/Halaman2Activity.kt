@@ -1,5 +1,4 @@
-
-package com.unsoed.informatikamobile
+package com.example.ifunsoedmobile
 
 import android.content.Intent
 import android.net.Uri
@@ -8,7 +7,9 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.net.toUri
-import com.unsoed.informatikamobile.databinding.ActivityHalaman2Binding
+// Import yang salah untuk ViewBinding akan diganti
+import com.unsoed.informatikamobile.databinding.ActivityHalaman2Binding // Import ViewBinding yang benar
+import com.unsoed.informatikamobile.R // Import untuk kelas R ditambahkan
 
 class Halaman2Activity : AppCompatActivity() {
     private lateinit var binding: ActivityHalaman2Binding

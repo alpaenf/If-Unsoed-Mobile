@@ -44,9 +44,16 @@ dependencies {
     implementation(libs.material)
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
-    implementation(libs.constraintlayout)
+    implementation(libs.constraintlayout) // Anda mungkin hanya memerlukan satu dependensi constraintlayout
     implementation("androidx.core:core-splashscreen:1.0.1") // Ditambahkan untuk Splash Screen
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+
+    implementation ("com.squareup.retrofit2:retrofit:3.0.0")
+    implementation("com.squareup.retrofit2:converter-gson:3.0.0")
+
+    implementation(libs.androidx.lifecycle.viewmodel.ktx) // Diperbaiki
+    implementation(libs.androidx.activity.ktx) // Diperbaiki
+
 }

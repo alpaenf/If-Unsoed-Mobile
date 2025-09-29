@@ -9,8 +9,14 @@
 
     <!-- Splash Screen Theme -->
     <style name="Theme.App.Starting" parent="Theme.SplashScreen">
-        <item name="windowSplashScreenBackground">@android:color/black</item>
+        <!-- Latar belakang splash screen diubah menjadi PUTIH -->
+        <item name="windowSplashScreenBackground">@android:color/white</item>
+
+        <!-- Menggunakan ikon launcher aplikasi -->
         <item name="windowSplashScreenAnimatedIcon">@mipmap/ic_launcher</item>
+
+        <!-- Tema yang akan diterapkan setelah splash screen selesai. -->
         <item name="postSplashScreenTheme">@style/Theme.IFUnsoedMobile</item>
     </style>
+
 </resources>
