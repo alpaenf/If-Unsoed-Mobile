@@ -74,6 +74,6 @@ Pada tugas keempat ini, pengembangan aplikasi dilanjutkan dengan menambahkan imp
 # Demo Aplikasi
 Cuplikan demo berikut memperlihatkan alur navigasi lengkap aplikasi, mulai dari halaman utama hingga ke tampilan detail buku.
 
- <img src="https://github.com/alpaenf/If-Unsoed-Mobile/blob/main/app/src/main/res/raw/demopertemuan4.gif" width="250"/>
+ <img src="https://github.com/alpaenf/If-Unsoed-Mobile/blob/main/app/src/main/res/raw/demo_pertemuan5.gif" width="250"/>
  
 ---
