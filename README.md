@@ -67,3 +67,13 @@ Aplikasi otomatis melakukan **fetch data** dari API dan menampilkan daftar buku 
   <img src="https://github.com/alpaenf/If-Unsoed-Mobile/blob/main/app/src/main/res/raw/demopertemuan4.gif" width="250"/>
 
 ---
+
+# Tugas 4 Pertemuan 5: Fragment dan Bottom Sheet Dialog
+Pada tugas keempat ini, pengembangan aplikasi dilanjutkan dengan menambahkan implementasi Fragment serta Bottom Sheet Dialog Fragment yang berfungsi untuk menampilkan detail buku ketika salah satu item pada RecyclerView dipilih.
+
+# Demo Aplikasi
+Cuplikan demo berikut memperlihatkan alur navigasi lengkap aplikasi, mulai dari halaman utama hingga ke tampilan detail buku.
+
+ <img src="https://github.com/alpaenf/If-Unsoed-Mobile/blob/main/app/src/main/res/raw/demopertemuan4.gif" width="250"/>
+ 
+---
