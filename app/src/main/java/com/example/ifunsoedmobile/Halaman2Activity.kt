@@ -3,13 +3,10 @@ package com.example.ifunsoedmobile
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
-import android.widget.ImageView
-import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.net.toUri
-// Import yang salah untuk ViewBinding akan diganti
-import com.unsoed.informatikamobile.databinding.ActivityHalaman2Binding // Import ViewBinding yang benar
-import com.unsoed.informatikamobile.R // Import untuk kelas R ditambahkan
+import com.example.ifunsoedmobile.R
+import com.example.ifunsoedmobile.databinding.ActivityHalaman2Binding
 
 class Halaman2Activity : AppCompatActivity() {
     private lateinit var binding: ActivityHalaman2Binding
@@ -29,44 +26,41 @@ class Halaman2Activity : AppCompatActivity() {
     }
 
     private fun initLayout() {
+        // Set icon dan text untuk layout Lihat Daftar Buku
+        binding.layoutKoleksiBuku.imgIcon.setImageResource(R.drawable.ic_book) 
+        binding.layoutKoleksiBuku.tvLayout.text = "Lihat Daftar Buku"
+
         // Set icon dan text untuk layout location
-        val locationIcon = binding.layoutLocation.root.findViewById<ImageView>(R.id.img_icon)
-        val locationText = binding.layoutLocation.root.findViewById<TextView>(R.id.tv_layout)
-        locationIcon.setImageResource(R.drawable.ic_location)
-        locationText.setText(R.string.alamat)
+        binding.layoutLocation.imgIcon.setImageResource(R.drawable.ic_location)
+        binding.layoutLocation.tvLayout.setText(R.string.alamat)
 
         // Set icon dan text untuk layout email
-        val emailIcon = binding.layoutEmail.root.findViewById<ImageView>(R.id.img_icon)
-        val emailText = binding.layoutEmail.root.findViewById<TextView>(R.id.tv_layout)
-        emailIcon.setImageResource(R.drawable.ic_email)
-        emailText.setText(R.string.email)
+        binding.layoutEmail.imgIcon.setImageResource(R.drawable.ic_email)
+        binding.layoutEmail.tvLayout.setText(R.string.email)
 
         // Set icon dan text untuk layout Instagram
-        val igIcon = binding.layoutIg.root.findViewById<ImageView>(R.id.img_icon)
-        val igText = binding.layoutIg.root.findViewById<TextView>(R.id.tv_layout)
-        igIcon.setImageResource(R.drawable.ic_himpunan)
-        igText.setText(R.string.ig_himpunan)
+        binding.layoutIg.imgIcon.setImageResource(R.drawable.ic_himpunan)
+        binding.layoutIg.tvLayout.setText(R.string.ig_himpunan)
 
         // Set icon dan text untuk layout phone
-        val phoneIcon = binding.layoutPhone.root.findViewById<ImageView>(R.id.img_icon)
-        val phoneText = binding.layoutPhone.root.findViewById<TextView>(R.id.tv_layout)
-        phoneIcon.setImageResource(R.drawable.ic_phone)
-        phoneText.setText(R.string.telepon)
+        binding.layoutPhone.imgIcon.setImageResource(R.drawable.ic_phone)
+        binding.layoutPhone.tvLayout.setText(R.string.telepon)
 
         // Set icon dan text untuk layout website
-        val websiteIcon = binding.layoutWebsite.root.findViewById<ImageView>(R.id.img_icon)
-        val websiteText = binding.layoutWebsite.root.findViewById<TextView>(R.id.tv_layout)
-        websiteIcon.setImageResource(R.drawable.ic_himpunan)
-        websiteText.setText(R.string.website)
+        binding.layoutWebsite.imgIcon.setImageResource(R.drawable.ic_himpunan)
+        binding.layoutWebsite.tvLayout.setText(R.string.website)
 
         // Set icon dan text untuk layout facebook
-        val facebookIcon = binding.layoutFacebook.root.findViewById<ImageView>(R.id.img_icon)
-        val facebookText = binding.layoutFacebook.root.findViewById<TextView>(R.id.tv_layout)
-        facebookIcon.setImageResource(R.drawable.ic_himpunan)
-        facebookText.setText(R.string.facebook)
+        binding.layoutFacebook.imgIcon.setImageResource(R.drawable.ic_himpunan)
+        binding.layoutFacebook.tvLayout.setText(R.string.facebook)
     }
 
     private fun initListener() {
+        // Pindah ke DaftarBukuActivity
+        binding.layoutKoleksiBuku.root.setOnClickListener {
+            startActivity(Intent(this, DaftarBukuActivity::class.java))
+        }
+
         // Open Maps
         binding.layoutLocation.root.setOnClickListener {
             val gMapsIntentUri = "$gMapsUrl$latitude,$longitude".toUri()

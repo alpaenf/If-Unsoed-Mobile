@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace = "com.unsoed.informatikamobile"
+    namespace = "com.example.ifunsoedmobile" // Diubah agar sesuai dengan package proyek
     compileSdk = 36
 
     defaultConfig {
-        applicationId = "com.unsoed.informatikamobile"
+        applicationId = "com.example.ifunsoedmobile" // Sebaiknya disamakan juga
         minSdk = 24
         targetSdk = 36
         versionCode = 1
@@ -55,5 +55,7 @@ dependencies {
 
     implementation(libs.androidx.lifecycle.viewmodel.ktx) // Diperbaiki
     implementation(libs.androidx.activity.ktx) // Diperbaiki
+
+    implementation("com.github.bumptech.glide:glide:5.0.5") // Glide ditambahkan di sini
 
 }

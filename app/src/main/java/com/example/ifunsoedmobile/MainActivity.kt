@@ -1,11 +1,10 @@
-package com.unsoed.informatikamobile // Disesuaikan dengan namespace
+package com.example.ifunsoedmobile
 
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
-import com.example.ifunsoedmobile.Halaman2Activity
-import com.unsoed.informatikamobile.databinding.ActivityMainBinding // Disesuaikan dengan namespace
+import com.example.ifunsoedmobile.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
@@ -21,7 +20,6 @@ class MainActivity : AppCompatActivity() {
 
     private fun initNavigation() {
         binding.btnToPage2.setOnClickListener {
-            // Pastikan Halaman2Activity ada di package yang benar atau import jika berbeda
             startActivity(Intent(this, Halaman2Activity::class.java))
         }
     }

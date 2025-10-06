@@ -20,5 +20,8 @@ data class BookDoc(
     val authorName: List<String>?,
 
     @SerializedName("first_publish_year")
-    val firstPublishYear: Int?
+    val firstPublishYear: Int?,
+
+    @SerializedName("cover_i")
+    val coverI: Int? // Ditambahkan untuk ID cover buku, nullable jika tidak selalu ada
 ) // Properti 'key' yang di body kelas dihapus

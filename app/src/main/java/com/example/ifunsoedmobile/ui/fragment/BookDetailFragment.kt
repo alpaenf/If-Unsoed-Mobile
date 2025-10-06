@@ -1,59 +1,88 @@
 package com.example.ifunsoedmobile.ui.fragment
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.unsoed.informatikamobile.R
+import com.bumptech.glide.Glide
+import com.example.ifunsoedmobile.R // Import R class
+import com.example.ifunsoedmobile.databinding.FragmentBookDetailBinding
+import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
+class BookDetailFragment : BottomSheetDialogFragment() {
 
-/**
- * A simple [Fragment] subclass.
- * Use the [BookDetailFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
-class BookDetailFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
+    private var _binding: FragmentBookDetailBinding? = null
+    private val binding get() = _binding!!
+
+    private var title: String? = null
+    private var author: String? = null
+    private var year: String? = null
+    private var coverId: Int = 0
+
+    // Tema Material 3 BottomSheet
+    override fun getTheme(): Int = com.google.android.material.R.style.ThemeOverlay_Material3_BottomSheetDialog
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        // Ambil data dari arguments
         arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
+            title = it.getString(ARG_TITLE)
+            author = it.getString(ARG_AUTHOR)
+            year = it.getString(ARG_YEAR)
+            coverId = it.getInt(ARG_COVER_ID)
         }
     }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_book_detail, container, false)
+    ): View {
+        _binding = FragmentBookDetailBinding.inflate(inflater, container, false)
+        return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        loadData()
+    }
+
+    private fun loadData() {
+        binding.textViewTitle.text = title ?: "-"
+        binding.textViewAuthor.text = author ?: "Unknown"
+        binding.textViewYear.text = year ?: "-"
+
+        if (coverId != 0 && coverId != -1) {
+            val imageUrl = "https://covers.openlibrary.org/b/id/$coverId-L.jpg"
+            Glide.with(this)
+                .load(imageUrl)
+                .placeholder(R.drawable.book_not_found) // tampil sementara
+                .error(R.drawable.book_not_found)       // kalau gagal load
+                .into(binding.imgCover)
+        } else {
+            // kalau nggak ada coverId
+            binding.imgCover.setImageResource(R.drawable.book_not_found)
+        }
+    }
+
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 
     companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment BookDetailFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
+        private const val ARG_TITLE = "arg_title"
+        private const val ARG_AUTHOR = "arg_author"
+        private const val ARG_YEAR = "arg_year"
+        private const val ARG_COVER_ID = "arg_cover_id"
+
+        fun newInstance(title: String, author: String, year: String, coverId: Int) =
             BookDetailFragment().apply {
                 arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
+                    putString(ARG_TITLE, title)
+                    putString(ARG_AUTHOR, author)
+                    putString(ARG_YEAR, year)
+                    putInt(ARG_COVER_ID, coverId)
                 }
             }
     }

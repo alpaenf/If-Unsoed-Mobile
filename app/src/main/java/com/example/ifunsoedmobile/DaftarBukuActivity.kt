@@ -4,23 +4,26 @@ import android.os.Bundle
 import android.util.Log
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen // Import untuk SplashScreen
+import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.unsoed.informatikamobile.databinding.ActivityDaftarBukuBinding
+import com.example.ifunsoedmobile.data.model.BookDoc
+import com.example.ifunsoedmobile.databinding.ActivityDaftarBukuBinding
 import com.example.ifunsoedmobile.ui.adapter.BookAdapter
+import com.example.ifunsoedmobile.ui.adapter.OnBookClickListener // ✅ Ganti ke interface baru
+import com.example.ifunsoedmobile.ui.fragment.BookDetailFragment
 import com.example.ifunsoedmobile.viewmodel.MainViewModel
 
-class DaftarBukuActivity : AppCompatActivity() {
+class DaftarBukuActivity : AppCompatActivity(), OnBookClickListener { // ✅ Ganti implementasi interface
 
     private lateinit var binding: ActivityDaftarBukuBinding
     private val viewModel: MainViewModel by viewModels()
-    private val adapter = BookAdapter()
     private val TAG = "DaftarBukuActivity"
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        // Panggil installSplashScreen() SEBELUM super.onCreate dan setContentView
-        val splashScreen = installSplashScreen()
+    // ✅ Konstruktor adapter sekarang menerima OnBookClickListener
+    private val adapter = BookAdapter(this)
 
+    override fun onCreate(savedInstanceState: Bundle?) {
+        val splashScreen = installSplashScreen()
         super.onCreate(savedInstanceState)
         Log.d(TAG, "onCreate: Activity Dibuat (setelah splash screen)")
 
@@ -28,25 +31,31 @@ class DaftarBukuActivity : AppCompatActivity() {
         setContentView(binding.root)
         Log.d(TAG, "onCreate: ContentView di-set")
 
-
-        // Setup RecyclerView
         binding.recyclerView.layoutManager = LinearLayoutManager(this)
         binding.recyclerView.adapter = adapter
         Log.d(TAG, "onCreate: RecyclerView di-setup")
 
-        // Observe LiveData dari ViewModel
         viewModel.books.observe(this) { books ->
             Log.d(TAG, "viewModel.books.observe: Menerima data buku, jumlah: ${books?.size ?: "null"}")
-            if (books.isNullOrEmpty()) {
-                Log.w(TAG, "viewModel.books.observe: Daftar buku kosong atau null")
-            } else {
-                Log.i(TAG, "viewModel.books.observe: Mengirim ${books.size} buku ke adapter.")
-            }
             adapter.submitList(books)
         }
 
-        // Panggil data awal
         Log.d(TAG, "onCreate: Memanggil viewModel.fetchBooks(\"kotlin programming\")")
         viewModel.fetchBooks("kotlin programming")
     }
+
+    // ✅ Fungsi callback dari OnBookClickListener
+    override fun onBookClick(book: BookDoc) {
+        Log.d(TAG, "onBookClick: Item diklik - ${book.title}")
+
+        // Tampilkan fragment detail buku
+        val bookDetailFragment = BookDetailFragment.newInstance(
+            title = book.title ?: "Judul Tidak Tersedia",
+            author = book.authorName?.joinToString(", ") ?: "Penulis Tidak Diketahui",
+            year = book.firstPublishYear?.toString() ?: "Tahun Tidak Diketahui",
+            coverId = book.coverI ?: 0
+        )
+        bookDetailFragment.show(supportFragmentManager, "BookDetailFragmentTag")
+    }
+
 }

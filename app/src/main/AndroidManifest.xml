@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    package="com.unsoed.informatikamobile">
+    xmlns:tools="http://schemas.android.com/tools">
 
     <uses-permission android:name="android.permission.INTERNET" />
 
@@ -17,17 +16,17 @@
 
         <activity
             android:name="com.example.ifunsoedmobile.DaftarBukuActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".MainActivity"
             android:exported="true"
-            android:theme="@style/Theme.App.Starting"> <!-- TEMA SPLASH SCREEN DITAMBAHKAN DI SINI -->
+            android:theme="@style/Theme.App.Starting"> 
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <activity
-            android:name=".MainActivity"
-            android:exported="true" /> <!-- TEMA SPLASH SCREEN DIHAPUS DARI SINI -->
 
         <activity
             android:name="com.example.ifunsoedmobile.Halaman2Activity"

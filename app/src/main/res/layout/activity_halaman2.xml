@@ -55,7 +55,7 @@
         android:padding="6dp"
         android:paddingBottom="16dp"
         app:layout_constraintBottom_toTopOf="@+id/btn_back"
-        app:layout_constraintTop_toBottomOf="@+id/iv_gedung_teknik"
+        app:layout_constraintTop_toBottomOf="@id/iv_gedung_teknik"
         app:layout_constraintVertical_bias="1.0"
         tools:layout_editor_absoluteX="16dp">
 
@@ -116,7 +116,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
 
-                <!-- Card tambahan untuk mengisi ruang kosong -->
                 <include
                     android:id="@+id/layout_website"
                     layout="@layout/layout_menu"
@@ -125,6 +124,12 @@
 
                 <include
                     android:id="@+id/layout_facebook"
+                    layout="@layout/layout_menu"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <include
+                    android:id="@+id/layout_koleksi_buku"
                     layout="@layout/layout_menu"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
